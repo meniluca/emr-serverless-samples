@@ -53,6 +53,7 @@ class EMRStudioStack(Stack):
             versioned=True,
             auto_delete_objects=False if namespace in protected_namespaces else True,
             bucket_name=f"emr-studio-assets-{Aws.REGION}-{namespace}",
+            enforce_ssl=True,  # type: ignore
             removal_policy=removal_policy,
             block_public_access=s3.BlockPublicAccess.BLOCK_ALL,  # type: ignore
         )
