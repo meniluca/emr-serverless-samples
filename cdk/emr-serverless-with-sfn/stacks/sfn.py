@@ -76,7 +76,7 @@ class SfnEmrServerlessJobsStack(Stack):
                             ],
                             resources=[
                                 bucket.bucket_arn,
-                                f"{bucket.bucket_arn}/*",
+                                f"{bucket.bucket_arn}/*",  # Must have * to manage all files in the bucket
                             ],
                         ),
                     ]
